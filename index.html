@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Origin Odyssey – Register</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&display=swap">
+<style>
+:root{--bg:#fbf0e4;--bg2:#efe3fb;--fg:#3b1a7a;--muted:#7a62a8;--line:#cdb8ee;--a:#5b21b6;--b:#9333ea;--card:rgba(255,255,255,.65);--err:#be123c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a0f33;--bg2:#2a1559;--fg:#f3e8ff;--muted:#c4b0ec;--line:#4c3a80;--a:#8b5cf6;--b:#c084fc;--card:rgba(255,255,255,.07);--err:#fb7185}}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:radial-gradient(circle at 0 0,var(--bg2) 0,transparent 55%),radial-gradient(circle at 100% 100%,var(--bg2) 0,transparent 50%),var(--bg);color:var(--fg);font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-size:19px;display:flex;align-items:center;justify-content:center;text-align:center;overflow-x:hidden}
+.deco{position:fixed;font-size:38px;opacity:.85;pointer-events:none}
+.card{width:100%;max-width:440px;padding:26px 24px;animation:in .45s ease}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.script{font-family:"Great Vibes","Brush Script MT",cursive;font-weight:400;line-height:1.05}
+h1{font-size:60px;margin:0 0 4px}
+h2{font-size:44px;margin:0 0 6px}
+.tagline{font-style:italic;font-size:22px;margin:0 0 20px}
+.tag{font-size:13px;letter-spacing:.25em;color:var(--b);text-transform:uppercase;margin-bottom:10px;font-weight:700}
+p.sub{color:var(--muted);margin:0 0 20px;font-size:20px}
+.info{border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);padding:14px 0;margin:18px 0 22px;text-align:left}
+.row{display:flex;gap:14px;align-items:center;margin:8px 0}
+.row .ic{font-size:26px;width:34px;text-align:center}
+.row b{font-size:21px}
+input{width:100%;padding:15px;border-radius:14px;border:1.5px solid var(--line);background:var(--card);color:var(--fg);font:inherit;font-size:21px;text-align:center;outline:none;margin-bottom:14px}
+input:focus{border-color:var(--b)}
+.btn{display:block;width:100%;text-align:center;text-decoration:none;border:0;cursor:pointer;padding:15px;border-radius:14px;font:inherit;font-size:20px;font-weight:700;letter-spacing:.04em;color:#fff;background:linear-gradient(90deg,var(--a),var(--b));margin-top:6px}
+.teams{display:grid;gap:12px;margin-bottom:16px}
+.team{padding:16px;border-radius:16px;border:1.5px solid var(--line);background:var(--card);color:var(--fg);text-align:left;font:inherit;font-size:22px;font-weight:700;cursor:pointer;display:flex;gap:14px;align-items:center}
+.team small{display:block;color:var(--muted);font-weight:500;font-size:16px;font-style:italic}
+.team.on{border-color:var(--b);background:rgba(147,51,234,.14)}
+.team .ic{font-size:32px}
+.dots{display:flex;gap:6px;margin-bottom:22px}
+.dots i{height:4px;flex:1;border-radius:2px;background:var(--line)}
+.dots i.on{background:linear-gradient(90deg,var(--a),var(--b))}
+.err{color:var(--err);font-size:16px;min-height:18px;margin:-6px 0 8px}
+.sum{border:1.5px solid var(--line);border-radius:16px;padding:12px 16px;margin:16px 0;background:var(--card);text-align:left}
+.sum div{display:flex;justify-content:space-between;padding:5px 0;gap:12px}
+.sum span{color:var(--muted)}
+.foot{margin-top:16px;font-weight:700;font-size:20px}
+</style>
+</head>
+<body>
+<div class="deco" style="top:6px;left:8px">🌸</div><div class="deco" style="top:10px;right:10px">🦋</div><div class="deco" style="bottom:8px;right:8px">🌸</div><div class="deco" style="bottom:10px;left:10px">🦋</div>
+<div class="card" id="app"></div>
+<script>
+/* ====== EDIT THESE ====== */
+const CONFIG={
+  event:"Origin Odyssey",
+  tagline:"The beginning of an epic teaching journey",
+  batch:"D.El.Ed Batch 2026-28",
+  date:"20th November 2026",
+  day:"Friday",
+  time:"10:00 am onwards",
+  venue:"DIET, Balasore, Remuna",
+  /* Optional: Google Form pre-filled link. Paste the form's "viewform" URL and the entry ids. */
+  formUrl:"https://docs.google.com/forms/d/e/1FAIpQLSeLAvnPmkR1l5Li9rQIjna_E1Y8UPpGrn7FgBWhkfkT9SHRIQ/viewform",
+  entryName:"entry.455932712",
+  entryRegd:"entry.1205229535",
+  entryFood:"entry.1665356621",
+  /* Optional fallback: organiser WhatsApp number with country code, e.g. 919876543210 */
+  whatsapp:"917735672393"
+};
+/* ======================== */
+const S={step:0,name:"",regd:"",food:"",status:""};
+const app=document.getElementById("app");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const dots=n=>`<div class="dots">${[1,2,3].map(i=>`<i class="${i<=n?"on":""}"></i>`).join("")}</div>`;
+function submitLink(){
+  if(CONFIG.formUrl){
+    const u=new URL(CONFIG.formUrl);
+    u.searchParams.set("usp","pp_url");
+    u.searchParams.set(CONFIG.entryName,S.name);
+    u.searchParams.set(CONFIG.entryRegd,S.regd);
+    u.searchParams.set(CONFIG.entryFood,S.food);
+    return {href:u.toString(),label:"Submit my registration →"};
+  }
+  if(CONFIG.whatsapp){
+    const t=`Freshers Registration%0AName: ${encodeURIComponent(S.name)}%0ARegd No: ${encodeURIComponent(S.regd)}%0AFood: ${encodeURIComponent(S.food)}`;
+    return {href:`https://wa.me/${CONFIG.whatsapp}?text=${t}`,label:"Send registration →"};
+  }
+  return null;
+}
+async function send(){
+  if(!CONFIG.formUrl){S.status="fallback";render();return}
+  S.status="sending";render();
+  try{
+    const fd=new FormData();
+    fd.append(CONFIG.entryName,S.name);fd.append(CONFIG.entryRegd,S.regd);fd.append(CONFIG.entryFood,S.food);
+    await fetch(CONFIG.formUrl.replace("/viewform","/formResponse"),{method:"POST",mode:"no-cors",body:fd});
+    S.status="done";
+  }catch(e){S.status="fallback"}
+  render();
+}
+function render(){
+  const s=S.step;let h="";
+  if(s===0){
+    h=`<div class="tag">✦ Freshers Welcome ✦</div>
+    <h1 class="script">${esc(CONFIG.event)}:</h1>
+    <p class="tagline">${esc(CONFIG.tagline)}</p>
+    <p class="sub" style="margin-bottom:0">Join us to celebrate new beginnings and be a part of our D.El.Ed journey ahead.</p>
+    <div class="info">
+    <div class="row"><div class="ic">📅</div><div><b>${esc(CONFIG.date)}</b> · ${esc(CONFIG.day)}</div></div>
+    <div class="row"><div class="ic">⏰</div><div><b>${esc(CONFIG.time)}</b></div></div>
+    <div class="row"><div class="ic">📍</div><div><b>${esc(CONFIG.venue)}</b></div></div></div>
+    <button class="btn" id="go">Register now →</button>`;
+  }else if(s===1){
+    h=dots(1)+`<h2 class="script">First things first…</h2><p class="sub">What should we call you?</p>
+    <input id="v" placeholder="Your name" autocomplete="name" value="${esc(S.name)}"><div class="err" id="e"></div>
+    <button class="btn" id="go">That’s me →</button>`;
+  }else if(s===2){
+    h=dots(2)+`<h2 class="script">Nice to meet you, ${esc(S.name.split(" ")[0])}</h2><p class="sub">Please share your Regd. No.</p>
+    <input id="v" placeholder="Registration number" autocapitalize="characters" value="${esc(S.regd)}"><div class="err" id="e"></div>
+    <button class="btn" id="go">Continue →</button>`;
+  }else if(s===3){
+    h=dots(3)+`<div class="tag">Last question</div><h2 class="script">Food preference</h2><p class="sub">Which side are you on?</p>
+    <div class="teams">
+      <button class="team ${S.food==="Vegetarian"?"on":""}" data-f="Vegetarian"><span class="ic">🥗</span><span>Vegetarian<small>Keep it green</small></span></button>
+      <button class="team ${S.food==="Non-Vegetarian"?"on":""}" data-f="Non-Vegetarian"><span class="ic">🍗</span><span>Non-Vegetarian<small>Bring on the feast</small></span></button>
+    </div><div class="err" id="e"></div>
+    <button class="btn" id="go">Complete registration</button>`;
+  }else{
+    const l=submitLink();
+    h=`<div class="tag">${S.status==="fallback"?"One last tap":"Registration recorded"}</div><h1 class="script" style="font-size:54px">Welcome!</h1>
+    <p class="sub">We can’t wait to begin this journey with you.</p>
+    <div class="sum"><div><span>Name</span><b>${esc(S.name)}</b></div><div><span>Regd. No.</span><b>${esc(S.regd)}</b></div><div><span>Food</span><b>${esc(S.food)}</b></div>
+    <div><span>When</span><b>${esc(CONFIG.date)}, ${esc(CONFIG.time)}</b></div><div><span>Where</span><b>${esc(CONFIG.venue)}</b></div></div>
+    ${S.status==="fallback"&&l?`<a class="btn" href="${esc(l.href)}" target="_blank" rel="noopener">${l.label}</a><p class="sub" style="margin-top:12px;font-size:16px">Tap once to complete your registration.</p>`:S.status==="sending"?`<p class="sub">Saving your registration…</p>`:""}
+    <div class="foot">${esc(CONFIG.batch)}</div>`;
+  }
+  app.innerHTML=`<div class="card" style="padding:0">${h}</div>`;
+  const go=document.getElementById("go"),v=document.getElementById("v"),e=document.getElementById("e");
+  if(v){v.focus();v.addEventListener("keydown",k=>{if(k.key==="Enter")go.click()})}
+  app.querySelectorAll(".team").forEach(b=>b.onclick=()=>{S.food=b.dataset.f;app.querySelectorAll(".team").forEach(x=>x.classList.toggle("on",x===b))});
+  if(go)go.onclick=()=>{
+    if(s===1){const t=v.value.trim();if(t.length<2){e.textContent="Please enter your name.";return}S.name=t}
+    if(s===2){const t=v.value.trim().toUpperCase();if(t.length<4){e.textContent="Please enter a valid registration number.";return}S.regd=t}
+    if(s===3&&!S.food){e.textContent="Pick a team to continue.";return}
+    S.step++;render();
+    if(S.step===4)send();
+  };
+}
+render();
+</script>
+</body>
+</html>
