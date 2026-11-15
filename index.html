@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Origin Odyssey – Register</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Cinzel:wght@500;700&family=Lora:wght@500;700&display=swap">
+<style>
+:root{--bg:#fbf0e4;--bg2:#efe3fb;--fg:#3b1a7a;--muted:#7a62a8;--line:#cdb8ee;--a:#5b21b6;--b:#9333ea;--card:rgba(255,255,255,.65);--err:#be123c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a0f33;--bg2:#2a1559;--fg:#f3e8ff;--muted:#c4b0ec;--line:#4c3a80;--a:#8b5cf6;--b:#c084fc;--card:rgba(255,255,255,.07);--err:#fb7185}}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:radial-gradient(circle at 0 0,var(--bg2) 0,transparent 55%),radial-gradient(circle at 100% 100%,var(--bg2) 0,transparent 50%),var(--bg);color:var(--fg);font-family:"Cormorant Garamond",Georgia,serif;font-size:19px;font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;display:flex;align-items:center;justify-content:center;text-align:center;overflow-x:hidden}
+.deco{position:fixed;font-size:38px;opacity:.85;pointer-events:none}
+.card{width:100%;max-width:440px;padding:26px 24px;animation:in .45s ease}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.script{font-family:"Allura","Brush Script MT",cursive;font-style:normal;font-weight:400;line-height:1.15}
+h1{font-size:38px;margin:0 0 4px}
+h2{font-size:30px;margin:0 0 8px}
+.tagline{font-style:italic;font-size:18px;margin:0 0 20px}
+.tag{font-size:13px;letter-spacing:.25em;color:var(--b);text-transform:uppercase;margin-bottom:10px;font-weight:700}
+p.sub{color:var(--muted);margin:0 0 20px;font-size:17px}
+.info{border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);padding:14px 0;margin:18px 0 22px;text-align:left}
+.row{display:flex;gap:14px;align-items:center;margin:8px 0}
+.row .ic{font-size:26px;width:34px;text-align:center}
+.row b{font-size:18px}
+input{width:100%;padding:15px;border-radius:14px;border:1.5px solid var(--line);background:var(--card);color:var(--fg);font:inherit;font-size:18px;text-align:center;outline:none;margin-bottom:14px}
+input:focus{border-color:var(--b)}
+.btn{display:block;width:100%;text-align:center;text-decoration:none;border:0;cursor:pointer;padding:15px;border-radius:14px;font:inherit;font-size:20px;font-weight:700;letter-spacing:.04em;color:#fff;background:linear-gradient(90deg,var(--a),var(--b));margin-top:6px}
+.teams{display:grid;gap:12px;margin-bottom:16px}
+.team{padding:16px;border-radius:16px;border:1.5px solid var(--line);background:var(--card);color:var(--fg);text-align:left;font:inherit;font-size:19px;font-weight:700;cursor:pointer;display:flex;gap:14px;align-items:center}
+.team small{display:block;color:var(--muted);font-weight:500;font-size:16px;font-style:italic}
+.team.on{border-color:var(--b);background:rgba(147,51,234,.14)}
+.team .ic{font-size:32px}
+.dots{display:flex;gap:6px;margin-bottom:22px}
+.dots i{height:4px;flex:1;border-radius:2px;background:var(--line)}
+.dots i.on{background:linear-gradient(90deg,var(--a),var(--b))}
+.err{color:var(--err);font-size:16px;min-height:18px;margin:-6px 0 8px}
+.sum{border:1.5px solid var(--line);border-radius:16px;padding:12px 16px;margin:16px 0;background:var(--card);text-align:left}
+.sum div{display:flex;justify-content:space-between;padding:5px 0;gap:12px}
+.sum span{color:var(--muted)}
+.note{border:1.5px dashed var(--b);border-radius:14px;padding:12px 14px;margin:0 0 18px;font-style:italic;font-size:17px}
+.foot{margin-top:16px;font-weight:700;font-size:20px}
+.save{font-size:76px;margin:0 0 6px;line-height:.95}
+.hl{background:linear-gradient(transparent 55%,#fde047 55%,#fde047 92%,transparent 92%);padding:0 6px;color:#3b1a7a}
+.to{font-size:26px;font-style:italic;color:var(--muted);margin:0}
+.big{font-size:34px;font-weight:700;line-height:1.15;margin:8px 0}
+.heart{color:var(--b);font-size:20px;margin:10px 0}
+.inv p{margin:0 0 6px;font-size:17px;font-style:italic;line-height:1.3}
+.inv .small{font-size:17px;color:var(--muted);margin-top:16px}
+.inv .info{text-align:left}
+.regards{font-style:italic;margin:14px 0 2px}
+.batch{font-size:26px;font-weight:700;margin:0}
+.ghost{background:none;color:var(--b);border:1.5px solid var(--line)}
+
+html{height:auto;min-height:100%}
+body{height:auto;min-height:100dvh;padding:30px 0;transition:background .6s,color .6s}
+.card{position:relative;z-index:1}
+.deco{z-index:0;opacity:.5;animation:fl 6s ease-in-out infinite}
+.deco:nth-of-type(2){animation-delay:-2s}.deco:nth-of-type(3){animation-delay:-4s}
+@keyframes fl{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-8px) rotate(6deg)}}
+.tag{font-family:"Cinzel",serif;font-size:12px;letter-spacing:.32em;font-weight:700}
+.save{display:inline-block;font-size:clamp(40px,12.5vw,54px);line-height:1.15;padding:.05em .14em .22em;margin:2px 0 0;background:linear-gradient(180deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 6px rgba(91,33,182,.25))}
+.orn{display:flex;align-items:center;gap:10px;color:var(--b);margin:10px 0;font-size:18px}
+.orn:before,.orn:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+.cdwrap{margin:14px 0 6px}
+.cdgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.cd{border:1.5px solid var(--line);background:var(--card);border-radius:16px;padding:10px 2px 8px;backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(91,33,182,.12)}
+.cd b{display:block;font-family:"Cinzel",serif;font-size:30px;line-height:1.1;color:var(--a)}
+.cd span{font-style:italic;font-size:14px;color:var(--muted)}
+.cdlabel{font-style:italic;color:var(--muted);font-size:17px;margin-bottom:8px}
+.live{font-family:"Allura",cursive;font-size:30px;color:var(--a);grid-column:1/-1}
+.info{border:1.5px solid var(--line);border-radius:20px;background:var(--card);padding:10px 16px;box-shadow:0 8px 22px rgba(91,33,182,.1)}
+.row .ic{background:linear-gradient(135deg,var(--a),var(--b));border-radius:50%;width:42px;height:42px;display:grid;place-items:center;font-size:20px;flex:none}
+input{border-radius:999px;background:var(--card);box-shadow:0 4px 14px rgba(91,33,182,.08)}
+.btn{border-radius:999px;box-shadow:0 10px 24px rgba(147,51,234,.35);font-family:"Cinzel",serif;font-size:15px;letter-spacing:.1em;text-transform:uppercase}
+.btn:active{transform:scale(.98)}
+.hl{background:linear-gradient(transparent 52%,#fde047 52%,#fde047 90%,transparent 90%)}
+/* Juniors night page */
+body.night{background:radial-gradient(circle at 50% -5%,#5b21b6 0,transparent 55%),radial-gradient(circle at 50% 105%,#86198f 0,transparent 50%),#12082b;color:#f5ecff}
+body.night:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(1.5px 1.5px at 12% 18%,#fff,transparent),radial-gradient(1.5px 1.5px at 80% 12%,#fde047,transparent),radial-gradient(1px 1px at 30% 70%,#fff,transparent),radial-gradient(1.5px 1.5px at 66% 58%,#fff,transparent),radial-gradient(1px 1px at 90% 82%,#fde047,transparent),radial-gradient(1px 1px at 8% 88%,#fff,transparent),radial-gradient(1.5px 1.5px at 48% 30%,#fde047,transparent);animation:tw 3.5s ease-in-out infinite}
+@keyframes tw{50%{opacity:.35}}
+.night .deco{opacity:.35}
+.jr{padding:6px 0}
+.jr .hand{font-family:"Allura",cursive;font-weight:400;font-size:30px;margin:0;color:#e9d8ff;line-height:1.1}
+.jr .crown{font-size:40px;filter:drop-shadow(0 0 10px #fde047)}
+.jr .gold{display:inline-block;font-size:clamp(46px,15vw,64px);line-height:1.15;padding:.05em .14em .22em;margin:0 0 4px;background:linear-gradient(180deg,#fff7ae,#facc15 55%,#f59e0b);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 4px 14px rgba(250,204,21,.4))}
+.jr .wel{font-family:"Cinzel",serif;font-weight:700;font-size:clamp(28px,9vw,36px);letter-spacing:.06em;color:#fff;margin:2px 0;text-shadow:0 0 22px rgba(192,132,252,.7)}
+.jr .rib{display:inline-block;background:#fde047;color:#2a0f5c;font-family:"Cinzel",serif;font-weight:700;font-size:25px;letter-spacing:.06em;padding:8px 22px;transform:rotate(-3deg);margin:12px 0 6px;box-shadow:0 8px 22px rgba(0,0,0,.4);clip-path:polygon(0 8%,4% 0,100% 6%,97% 100%,3% 94%)}
+.jr .bt{font-style:italic;color:#d8c8f5;margin:6px 0 0;font-size:20px}
+.jr .orn{color:#fde047}
+.jr .orn:before,.jr .orn:after{background:linear-gradient(90deg,transparent,#7c5cc4,transparent)}
+.jr .msg{color:#e9d8ff;font-size:20px;margin:6px 0 18px}
+.jr .btn{background:linear-gradient(90deg,#facc15,#f59e0b);color:#2a0f5c;box-shadow:0 10px 26px rgba(250,204,21,.35)}
+.genz{font-family:"Allura",cursive;font-weight:400;font-size:32px;line-height:1.15;margin:14px 0 6px;color:var(--a)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+
+
+h1{font-size:52px}h2{font-size:42px}
+.save{font-size:clamp(54px,17vw,76px)}
+.jr .gold{font-size:clamp(64px,20vw,92px)}
+.jr .hand{font-size:36px;font-weight:400}
+.genz{font-size:38px;font-weight:400}
+.tagline{font-size:20px}
+p.sub{font-size:20px}
+.note{font-size:18px}
+input{font-family:"Lora",serif;font-size:18px}
+.row b,.sum b{font-family:"Lora",serif;font-size:16px;font-weight:500}
+.jr .wel{font-size:clamp(28px,9vw,36px)}
+.btn{font-size:15px;font-weight:700}
+.mini{display:block;font-size:15px;color:var(--b);text-decoration:underline;margin:6px 0 10px}
+</style>
+</head>
+<body>
+<div class="deco" style="top:6px;left:8px">🌸</div><div class="deco" style="top:10px;right:10px">🦋</div><div class="deco" style="bottom:8px;right:8px">🌸</div><div class="deco" style="bottom:10px;left:10px">🦋</div>
+<div class="card" id="app"></div>
+<script>
+/* ====== EDIT THESE ====== */
+const CONFIG={
+  event:"Origin Odyssey",
+  tagline:"The beginning of an epic teaching journey",
+  batch:"D.El.Ed Batch 2026-28",
+  date:"20th November 2026",
+  day:"Friday",
+  time:"10:00 am onwards",
+  target:"2026-11-20T10:00:00+05:30", /* countdown ends here */
+  venue:"DIET, Baleshwar, Remuna",
+  /* Optional: Google Form pre-filled link. Paste the form's "viewform" URL and the entry ids. */
+  formUrl:"https://docs.google.com/forms/d/e/1FAIpQLSeLAvnPmkR1l5Li9rQIjna_E1Y8UPpGrn7FgBWhkfkT9SHRIQ/viewform",
+  entryName:"entry.455932712",
+  entryRegd:"entry.1205229535",
+  /* Optional fallback: organiser WhatsApp number with country code, e.g. 919876543210 */
+  whatsapp:"917735672393"
+};
+/* ======================== */
+const S={step:0,name:"",regd:"",status:""};
+const app=document.getElementById("app");
+const first=n=>{const f=String(n).trim().split(/\s+/)[0]||"";return f.charAt(0).toUpperCase()+f.slice(1).toLowerCase()};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const dots=n=>`<div class="dots">${[1,2].map(i=>`<i class="${i<=n?"on":""}"></i>`).join("")}</div>`;
+function submitLink(){
+  if(CONFIG.formUrl){
+    const u=new URL(CONFIG.formUrl);
+    u.searchParams.set("usp","pp_url");
+    u.searchParams.set(CONFIG.entryName,S.name);
+    u.searchParams.set(CONFIG.entryRegd,S.regd);
+    return {href:u.toString(),label:"Submit my registration →"};
+  }
+  if(CONFIG.whatsapp){
+    const t=`Freshers Registration%0AName: ${encodeURIComponent(S.name)}%0ARoll No: ${encodeURIComponent(S.regd)}`;
+    return {href:`https://wa.me/${CONFIG.whatsapp}?text=${t}`,label:"Send registration →"};
+  }
+  return null;
+}
+function send(){
+  if(!CONFIG.formUrl){S.status="fallback";render();return}
+  S.status="sending";render();
+  const url=CONFIG.formUrl.replace("/viewform","/formResponse");
+  const data=new URLSearchParams();
+  data.set(CONFIG.entryName,S.name);data.set(CONFIG.entryRegd,S.regd);
+  const viaForm=()=>{
+    try{
+      const ifr=document.createElement("iframe");ifr.name="hf";ifr.style.display="none";document.body.appendChild(ifr);
+      const f=document.createElement("form");f.method="POST";f.target="hf";f.style.display="none";f.action=url;
+      data.forEach((v,k)=>{const i=document.createElement("input");i.type="hidden";i.name=k;i.value=v;f.appendChild(i)});
+      document.body.appendChild(f);f.submit();
+    }catch(e){}
+  };
+  const done=()=>{S.status="done";render()};
+  fetch(url,{method:"POST",mode:"no-cors",body:data})
+    .then(()=>setTimeout(done,900))
+    .catch(()=>{viaForm();setTimeout(done,1800)});
+}
+function tick(){
+  const el=document.getElementById("cd");if(!el)return;
+  const d=new Date(CONFIG.target)-Date.now();
+  if(d<=0){el.innerHTML='<div class="live">The celebration has begun ✨</div>';return}
+  const v=[[Math.floor(d/864e5),"Days"],[Math.floor(d%864e5/36e5),"Hours"],[Math.floor(d%36e5/6e4),"Mins"],[Math.floor(d%6e4/1e3),"Secs"]];
+  el.innerHTML=v.map(([n,l])=>`<div class="cd"><b>${String(n).padStart(2,"0")}</b><span>${l}</span></div>`).join("");
+}
+setInterval(tick,1000);
+function render(){
+  const s=S.step;let h="";
+  if(s===0){
+    h=`<div class="tag">✦ Freshers Welcome ✦</div>
+    <h1 class="script save">Save the Date</h1>
+    <div class="orn">❦</div>
+    <div class="cdwrap"><div class="cdlabel">The celebration begins in</div><div class="cdgrid" id="cd"></div></div>
+    <p class="genz">Main character era: <span class="hl">loading…</span> ✨</p>
+    <p class="sub" style="margin:0;font-size:17px">No cap, new batch, new vibes, zero boring days. Come pull up with us 🎒💜</p>
+    <div class="info" style="margin:18px 0 22px">
+    <div class="row"><div class="ic">📅</div><div><b>${esc(CONFIG.date)}</b><br>${esc(CONFIG.day)}</div></div>
+    <div class="row"><div class="ic">⏰</div><div><b>${esc(CONFIG.time)}</b></div></div>
+    <div class="row"><div class="ic">📍</div><div><b>${esc(CONFIG.venue)}</b></div></div></div>
+    <button class="btn" id="go">Register now</button>`;
+  }else if(s===1){
+    h=dots(1)+`<h2 class="script">First things first…</h2><p class="sub">What should we call you?</p>
+    <input id="v" placeholder="Your name" autocomplete="name" value="${esc(S.name)}"><div class="err" id="e"></div>
+    <button class="btn" id="go">That’s me →</button>`;
+  }else if(s===2){
+    h=dots(2)+`<h2 class="script">Nice to meet you, ${esc(first(S.name))}</h2><p class="sub">Please share your Roll No.</p>
+    <input id="v" placeholder="Roll number (1–100)" inputmode="numeric" maxlength="3" value="${esc(S.regd)}"><div class="err" id="e"></div>
+    <button class="btn" id="go">Complete registration</button>`;
+  }else if(s===3){
+    const l=submitLink();
+    h=`<div class="tag">${S.status==="fallback"?"One last tap":"Registration sent"}</div><h1 class="script" style="font-size:clamp(36px,11vw,44px)">Welcome!</h1>
+    <p class="sub">We can’t wait to begin this journey with you.</p>
+    <div class="sum"><div><span>Name</span><b>${esc(S.name)}</b></div><div><span>Roll No.</span><b>${esc(S.regd)}</b></div>
+    <div><span>When</span><b>${esc(CONFIG.date)}, ${esc(CONFIG.time)}</b></div><div><span>Where</span><b>${esc(CONFIG.venue)}</b></div></div>
+    ${S.status==="fallback"&&l?`<a class="btn" href="${esc(l.href)}" target="_blank" rel="noopener">${l.label}</a><p class="sub" style="margin-top:12px;font-size:16px">Tap once to complete your registration.</p>`:S.status==="sending"?`<p class="sub">Saving your registration…</p>`:l?`<a class="mini" href="${esc(l.href)}" target="_blank" rel="noopener">Not in the list? Tap here to confirm manually</a>`:""}
+    <div class="foot">${esc(CONFIG.batch)}</div>
+    <button class="btn" id="go" style="margin-top:18px">Continue →</button>`;
+  }else if(s===4){
+    h=`<div class="jr"><div class="crown">👑</div>
+    <p class="hand">To Our</p>
+    <h1 class="script gold">Juniors</h1>
+    <p class="hand">you are heartily</p>
+    <div class="wel">WELCOME</div>
+    <p class="hand">to</p>
+    <div class="rib">${esc(CONFIG.event)}</div>
+    <p class="bt">${esc(CONFIG.batch)}</p>
+    <div class="orn">✦ ❤ ✦</div>
+    <p class="msg">${esc(first(S.name))}, your registration is complete.<br>See you on ${esc(CONFIG.date)}!</p>
+    <button class="btn" id="go">View invitation</button></div>`;
+  }else{
+    h=`<div class="inv"><h1 class="script" style="font-size:clamp(36px,11vw,44px)">${esc(CONFIG.event)}:</h1>
+    <p class="tagline" style="margin-bottom:10px">${esc(CONFIG.tagline)}</p>
+    <p style="color:var(--muted)">(Let’s Begin a New Journey Together)</p>
+    <div class="orn">❤</div>
+    <p>Join us to celebrate new beginnings, forge new memories and be a part of our D.El.Ed journey ahead.</p>
+    <div class="orn">❤</div>
+    <p>Let’s come together to share joy, build bonds and step into this beautiful chapter of life.</p>
+    <div class="info">
+    <div class="row"><div class="ic">📅</div><div>Date : <b>${esc(CONFIG.date)}</b></div></div>
+    <div class="row"><div class="ic">⏰</div><div>Time : <b>${esc(CONFIG.time)}</b></div></div>
+    <div class="row"><div class="ic">📍</div><div>Venue : <b>${esc(CONFIG.venue)}</b></div></div></div>
+    <p class="regards">With warm regards</p>
+    <p class="batch">${esc(CONFIG.batch)}</p>
+    <div class="note" style="margin-top:18px">🌿 Due to the holy month of Kartik, we have only vegetarian food.</div>
+    <button class="btn ghost" id="go">← Back</button></div>`;
+  }
+  document.body.classList.toggle("night",s===4);
+  app.innerHTML=`<div class="card" style="padding:0">${h}</div>`;
+  tick();
+  const go=document.getElementById("go"),v=document.getElementById("v"),e=document.getElementById("e");
+  if(v){v.focus();v.addEventListener("keydown",k=>{if(k.key==="Enter")go.click()})}
+  app.querySelectorAll(".team").forEach(b=>b.onclick=()=>{S.food=b.dataset.f;app.querySelectorAll(".team").forEach(x=>x.classList.toggle("on",x===b))});
+  if(go)go.onclick=()=>{
+    if(s===1){const t=v.value.trim();if(t.length<2){e.textContent="Please enter your name.";return}S.name=t.toLowerCase().replace(/(^|[\s.-])([a-z])/g,(m,a,b)=>a+b.toUpperCase())}
+    if(s===2){const t=v.value.trim();if(!/^\d{1,3}$/.test(t)||+t<1||+t>100){e.textContent="Please enter your roll number (1 to 100).";return}S.regd=String(+t)}
+    if(s===5){S.step=4;render();return}
+    S.step++;render();
+    if(S.step===3)send();
+  };
+}
+render();
+</script>
+</body>
+</html>
